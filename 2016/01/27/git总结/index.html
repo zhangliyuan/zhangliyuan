@@ -69,7 +69,7 @@
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/snapshots.png">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/trees.png">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/branches.png">
-<meta property="og:updated_time" content="2016-02-14T09:38:56.648Z">
+<meta property="og:updated_time" content="2016-02-15T02:14:02.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="git的作用四个字：版本控制。版本控制用于记录若干的文件内容的变化，能够便于将来查看特定时间点上该文件的基本情况。">
@@ -278,7 +278,9 @@
 <p>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。</p>
 <p>假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
-<h4 id="u5220_u9664_u6587_u4EF6"><a href="#u5220_u9664_u6587_u4EF6" class="headerlink" title="删除文件"></a>删除文件</h4>
+<h4 id="u5220_u9664_u6587_u4EF6"><a href="#u5220_u9664_u6587_u4EF6" class="headerlink" title="删除文件"></a>删除文件</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm  -r -n --cached   */bin</span><br></pre></td></tr></table></figure>
+<p>表示删除所有目录下的bin目录<br><code>-n</code>: 只是查看要删除的文件，并不真正删除；去掉这个选项就会删除文件；</p>
+
       
     </div>
 
