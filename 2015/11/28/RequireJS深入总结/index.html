@@ -62,11 +62,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="RequireJS深入总结">
 <meta property="og:url" content="http://yoursite.com/2015/11/28/RequireJS深入总结/index.html">
-<meta property="og:site_name" content="胡逼蛋侃">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="RequireJS是什么”RequireJS是一个JavaScript文件和模块加载器，适合在浏览器中使用，当然也可在其它脚本环境中使用。“。这是官方给出的定义，简洁明了的指出了RequireJS是什么——加载器。什么加载器，JavaScript模块的加载器。
 那么为什么JavaScript模块需要这么一个加载器呢？">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/hubidankanRequireJS_logo.png">
-<meta property="og:updated_time" content="2015-12-17T08:10:05.703Z">
+<meta property="og:updated_time" content="2016-02-14T14:00:54.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RequireJS深入总结">
 <meta name="twitter:description" content="RequireJS是什么”RequireJS是一个JavaScript文件和模块加载器，适合在浏览器中使用，当然也可在其它脚本环境中使用。“。这是官方给出的定义，简洁明了的指出了RequireJS是什么——加载器。什么加载器，JavaScript模块的加载器。
@@ -88,7 +88,7 @@
   };
 </script>
 
-  <title> RequireJS深入总结 | 胡逼蛋侃 </title>
+  <title> RequireJS深入总结 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -115,7 +115,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">胡逼蛋侃</span>
+      <span class="site-title">Hexo</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -245,9 +245,9 @@
 
       
         <p><img src="http://7xlxb6.com1.z0.glb.clouddn.com/hubidankanRequireJS_logo.png" alt=""></p>
-<h2 id="RequireJS_u662F_u4EC0_u4E48"><a href="#RequireJS_u662F_u4EC0_u4E48" class="headerlink" title="RequireJS是什么"></a>RequireJS是什么</h2><p>”RequireJS是一个JavaScript文件和模块加载器，适合在浏览器中使用，当然也可在其它脚本环境中使用。“。这是官方给出的定义，简洁明了的指出了RequireJS是什么——<strong>加载器</strong>。什么加载器，<strong>JavaScript模块</strong>的加载器。</p>
+<h2 id="RequireJS是什么"><a href="#RequireJS是什么" class="headerlink" title="RequireJS是什么"></a>RequireJS是什么</h2><p>”RequireJS是一个JavaScript文件和模块加载器，适合在浏览器中使用，当然也可在其它脚本环境中使用。“。这是官方给出的定义，简洁明了的指出了RequireJS是什么——<strong>加载器</strong>。什么加载器，<strong>JavaScript模块</strong>的加载器。</p>
 <p><em>那么为什么JavaScript模块需要这么一个加载器呢？</em><a id="more"></a></p>
-<h2 id="RequireJS_u51FA_u73B0_u7684_u80CC_u666F"><a href="#RequireJS_u51FA_u73B0_u7684_u80CC_u666F" class="headerlink" title="RequireJS出现的背景"></a>RequireJS出现的背景</h2><p>随着Web站点的发展，难免会出现这样的情况：</p>
+<h2 id="RequireJS出现的背景"><a href="#RequireJS出现的背景" class="headerlink" title="RequireJS出现的背景"></a>RequireJS出现的背景</h2><p>随着Web站点的发展，难免会出现这样的情况：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这段代码依次加载多个js文件。<br>这样的写法有很大的缺点。首先，加载的时候，浏览器会停止网页渲染，加载文件越多，网页失去响应的时间就会越长；其次，由于js文件之间存在依赖关系，因此必须严格保证加载顺序（比如上例的1.js要在2.js的前面），依赖性最大的模块一定要放到最后加载，当依赖关系很复杂的时候，代码的编写和维护都会变得困难。</p>
 <p>总的来说，当时的Web Site面临这下面这些问题：</p>
@@ -265,18 +265,18 @@
 <li>易于开发人员使用且优化工具有助于部署</li>
 </ul>
 <p><em>RequireJS就是在这样的背景下出现的，那么RequireJS是如何解决上述问题的？</em></p>
-<h2 id="RequireJS_u7684_u7279_u6027"><a href="#RequireJS_u7684_u7279_u6027" class="headerlink" title="RequireJS的特性"></a>RequireJS的特性</h2><ul>
+<h2 id="RequireJS的特性"><a href="#RequireJS的特性" class="headerlink" title="RequireJS的特性"></a>RequireJS的特性</h2><ul>
 <li>使JS文件模块化，一个JS文件即可认为是一个JS模块</li>
 <li>模块可异步按需加载，减少了传统JS Script加载导致的页面阻塞问题</li>
 <li>提供命名空间，减少变量命名冲突的问题</li>
 <li>配置简单，易上手 </li>
 </ul>
 <p>模块化的Javascript代码解决了各个功能组件的松耦合性，复用性和可维护性。</p>
-<h2 id="RequireJS_u4F7F_u7528_u7684_u573A_u666F"><a href="#RequireJS_u4F7F_u7528_u7684_u573A_u666F" class="headerlink" title="RequireJS使用的场景"></a>RequireJS使用的场景</h2><p>RequireJS比较适合浏览器端，这是相对于CommonJS而言。因为RequireJS遵循AMD模范，它异步加载js，避免浏览器因为加载某个js而阻塞导致白屏出现。当然，这并不是说RequireJS就不可以在服务端使用了，所有的可用不可用都是相对而言的。</p>
-<h2 id="RequireJS_u7684_u7B80_u5355_u4F7F_u7528"><a href="#RequireJS_u7684_u7B80_u5355_u4F7F_u7528" class="headerlink" title="RequireJS的简单使用"></a>RequireJS的简单使用</h2><h3 id="u5728_u9875_u9762_u4E2D_u5F15_u7528"><a href="#u5728_u9875_u9762_u4E2D_u5F15_u7528" class="headerlink" title="在页面中引用"></a>在页面中引用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">data-main</span>=<span class="value">"scripts/main.js"</span> <span class="attribute">src</span>=<span class="value">"scripts/require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="RequireJS使用的场景"><a href="#RequireJS使用的场景" class="headerlink" title="RequireJS使用的场景"></a>RequireJS使用的场景</h2><p>RequireJS比较适合浏览器端，这是相对于CommonJS而言。因为RequireJS遵循AMD模范，它异步加载js，避免浏览器因为加载某个js而阻塞导致白屏出现。当然，这并不是说RequireJS就不可以在服务端使用了，所有的可用不可用都是相对而言的。</p>
+<h2 id="RequireJS的简单使用"><a href="#RequireJS的简单使用" class="headerlink" title="RequireJS的简单使用"></a>RequireJS的简单使用</h2><h3 id="在页面中引用"><a href="#在页面中引用" class="headerlink" title="在页面中引用"></a>在页面中引用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">data-main</span>=<span class="value">"scripts/main.js"</span> <span class="attribute">src</span>=<span class="value">"scripts/require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>RequireJS以一个相对于baseUrl的地址来加载所有的代码。 页面顶层<code>&lt;script&gt;</code>标签含有一个特殊的属性<code>data-main</code>，<code>require.js</code>使用它来启动脚本加载过程，而<code>baseUrl</code>一般设置到与该属性相一致的目录。<code>baseUrl</code>亦可通过RequireJS config手动设置。如果没有显式指定config及data-main，则默认的baseUrl为包含RequireJS的那个HTML页面的所属目录。</p>
-<h3 id="RequireJS_u7684API"><a href="#RequireJS_u7684API" class="headerlink" title="RequireJS的API"></a>RequireJS的API</h3><p>require会定义三个变量： define , require , requirejs ，<br>其中require === requirejs，一般使用require更简短<br>‘define’提供命名空间来定义新的模块，并声明其所要依赖的模块。<br>‘require’加载依赖模块，并执行加载完后的回调函数。</p>
-<h3 id="RequireJS_config_u914D_u7F6E"><a href="#RequireJS_config_u914D_u7F6E" class="headerlink" title="RequireJS config配置"></a>RequireJS config配置</h3><p>如果你想改变RequireJS的默认配置来使用自定义的配置，可以使用require.config函数。<br>config函数需要传入一个可选的参数对象，这个可选参数对象包含了许多的配置参数选项。<br>下面时一些常用的配置项： </p>
+<h3 id="RequireJS的API"><a href="#RequireJS的API" class="headerlink" title="RequireJS的API"></a>RequireJS的API</h3><p>require会定义三个变量： define , require , requirejs ，<br>其中require === requirejs，一般使用require更简短<br>‘define’提供命名空间来定义新的模块，并声明其所要依赖的模块。<br>‘require’加载依赖模块，并执行加载完后的回调函数。</p>
+<h3 id="RequireJS-config配置"><a href="#RequireJS-config配置" class="headerlink" title="RequireJS config配置"></a>RequireJS config配置</h3><p>如果你想改变RequireJS的默认配置来使用自定义的配置，可以使用require.config函数。<br>config函数需要传入一个可选的参数对象，这个可选参数对象包含了许多的配置参数选项。<br>下面时一些常用的配置项： </p>
 <ul>
 <li>baseUrl: 用于加载模块的根路径。 </li>
 <li>paths: 用于映射不存在根路径下面的模块路径。 </li>
@@ -284,11 +284,11 @@
 <li>deps: 加载依赖关系数组。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">  <span class="comment">//By default load any module IDs from scripts/app</span></span><br><span class="line">  baseUrl: <span class="string">'scripts/app'</span>,</span><br><span class="line">  <span class="comment">//except, if the module ID starts with "lib"</span></span><br><span class="line">  paths: &#123;</span><br><span class="line">    lib: <span class="string">'../lib'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// load backbone as a shim</span></span><br><span class="line">  shim: &#123;</span><br><span class="line">    <span class="string">'backbone'</span>: &#123;</span><br><span class="line">    <span class="comment">//The underscore script dependency should be loaded before loading backbone.js</span></span><br><span class="line">    deps: [<span class="string">'underscore'</span>],</span><br><span class="line">    <span class="comment">// use the global 'Backbone' as the module name.</span></span><br><span class="line">    exports: <span class="string">'Backbone'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="RequireJS_u6709_u4EC0_u4E48_u5751"><a href="#RequireJS_u6709_u4EC0_u4E48_u5751" class="headerlink" title="RequireJS有什么坑"></a>RequireJS有什么坑</h2><ul>
+<h2 id="RequireJS有什么坑"><a href="#RequireJS有什么坑" class="headerlink" title="RequireJS有什么坑"></a>RequireJS有什么坑</h2><ul>
 <li>由于在开发中模块加载过多，导致http请求过多，因此RequireJS提供了一个名为 optimizer的工具以优化。 </li>
 <li>由于AMD是模块依赖预加载，即被依赖的模块需要先被加载，而不是使用时再加载，其灵活性不及CMD规范的SeaJS</li>
 </ul>
-<h2 id="RequireJS_u4E0EECMAScript_6"><a href="#RequireJS_u4E0EECMAScript_6" class="headerlink" title="RequireJS与ECMAScript 6"></a>RequireJS与ECMAScript 6</h2><p>在最新的ECMAScript 6中，已经引入了Module概念。在其模块系统中，每个JavaScript代码文件在ES6中都是一个模块。只有模块中的对象需要被外部调用时，模块才会输出对象，其余则都是模块的私有对象。该处理方式将细节进行封装，仅导出必要的功能。但是，在浏览器对这一特性实现支持前，我们还需要等待一段时间。所以之前的模块化实现方案RequireJS（也包括SeaJS，TypeScript等），还是我们目前需要使用的工具。</p>
+<h2 id="RequireJS与ECMAScript-6"><a href="#RequireJS与ECMAScript-6" class="headerlink" title="RequireJS与ECMAScript 6"></a>RequireJS与ECMAScript 6</h2><p>在最新的ECMAScript 6中，已经引入了Module概念。在其模块系统中，每个JavaScript代码文件在ES6中都是一个模块。只有模块中的对象需要被外部调用时，模块才会输出对象，其余则都是模块的私有对象。该处理方式将细节进行封装，仅导出必要的功能。但是，在浏览器对这一特性实现支持前，我们还需要等待一段时间。所以之前的模块化实现方案RequireJS（也包括SeaJS，TypeScript等），还是我们目前需要使用的工具。</p>
 
       
     </div>
@@ -376,15 +376,15 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://7xlxb6.com1.z0.glb.clouddn.com/hubidankanaaa%E6%A0%87%E9%A2%98.png"
-               alt="Hubidankan" />
-          <p class="site-author-name" itemprop="name">Hubidankan</p>
-          <p class="site-description motion-element" itemprop="description">Just for funs!!</p>
+               src="http://7xlxb6.com1.z0.glb.clouddn.com/avatar.jpg"
+               alt="hubidankan" />
+          <p class="site-author-name" itemprop="name">hubidankan</p>
+          <p class="site-description motion-element" itemprop="description">Just for fun!!!</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -398,7 +398,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
@@ -408,6 +408,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2171382337/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Weibo
+                  
+                </a>
+              </span>
+            
           
         </div>
 
@@ -430,7 +440,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u662F_u4EC0_u4E48"><span class="nav-number">1.</span> <span class="nav-text">RequireJS是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u51FA_u73B0_u7684_u80CC_u666F"><span class="nav-number">2.</span> <span class="nav-text">RequireJS出现的背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u7684_u7279_u6027"><span class="nav-number">3.</span> <span class="nav-text">RequireJS的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u4F7F_u7528_u7684_u573A_u666F"><span class="nav-number">4.</span> <span class="nav-text">RequireJS使用的场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u7684_u7B80_u5355_u4F7F_u7528"><span class="nav-number">5.</span> <span class="nav-text">RequireJS的简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728_u9875_u9762_u4E2D_u5F15_u7528"><span class="nav-number">5.1.</span> <span class="nav-text">在页面中引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequireJS_u7684API"><span class="nav-number">5.2.</span> <span class="nav-text">RequireJS的API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequireJS_config_u914D_u7F6E"><span class="nav-number">5.3.</span> <span class="nav-text">RequireJS config配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u6709_u4EC0_u4E48_u5751"><span class="nav-number">6.</span> <span class="nav-text">RequireJS有什么坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS_u4E0EECMAScript_6"><span class="nav-number">7.</span> <span class="nav-text">RequireJS与ECMAScript 6</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS是什么"><span class="nav-number">1.</span> <span class="nav-text">RequireJS是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS出现的背景"><span class="nav-number">2.</span> <span class="nav-text">RequireJS出现的背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS的特性"><span class="nav-number">3.</span> <span class="nav-text">RequireJS的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS使用的场景"><span class="nav-number">4.</span> <span class="nav-text">RequireJS使用的场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS的简单使用"><span class="nav-number">5.</span> <span class="nav-text">RequireJS的简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在页面中引用"><span class="nav-number">5.1.</span> <span class="nav-text">在页面中引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequireJS的API"><span class="nav-number">5.2.</span> <span class="nav-text">RequireJS的API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequireJS-config配置"><span class="nav-number">5.3.</span> <span class="nav-text">RequireJS config配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS有什么坑"><span class="nav-number">6.</span> <span class="nav-text">RequireJS有什么坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequireJS与ECMAScript-6"><span class="nav-number">7.</span> <span class="nav-text">RequireJS与ECMAScript 6</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -456,7 +466,7 @@
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Hubidankan</span>
+  <span class="author" itemprop="copyrightHolder">hubidankan</span>
 </div>
 
 <div class="powered-by">

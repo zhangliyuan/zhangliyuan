@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,模板," />
+  <meta name="keywords" content="魔兽," />
 
 
 
@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="简介什么是HandlebarHandlebars.js 是对 Mustache模板语言的扩展，所以你可以将Mustache导入Handlebars以使用 Handlebars 强大的功能。">
+<meta name="description" content="抄来一段歌词：
+像所有的人一样两点一线的 奔波着挤着狭窄的公车客气的笑着如今我们这样子各奔前程的 拼搏着那段燃烧的岁月是否还记得偶尔也会看着手链上的炉石 傻笑着也会用鲜血雷鸣把自己鼓励着">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Handlebar的基础语法">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/Handlebar前端模板/index.html">
+<meta property="og:title" content="魔兽老了">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/魔兽老了/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="简介什么是HandlebarHandlebars.js 是对 Mustache模板语言的扩展，所以你可以将Mustache导入Handlebars以使用 Handlebars 强大的功能。">
-<meta property="og:updated_time" content="2016-02-14T14:00:54.648Z">
+<meta property="og:description" content="抄来一段歌词：
+像所有的人一样两点一线的 奔波着挤着狭窄的公车客气的笑着如今我们这样子各奔前程的 拼搏着那段燃烧的岁月是否还记得偶尔也会看着手链上的炉石 傻笑着也会用鲜血雷鸣把自己鼓励着">
+<meta property="og:updated_time" content="2016-03-23T14:07:13.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Handlebar的基础语法">
-<meta name="twitter:description" content="简介什么是HandlebarHandlebars.js 是对 Mustache模板语言的扩展，所以你可以将Mustache导入Handlebars以使用 Handlebars 强大的功能。">
+<meta name="twitter:title" content="魔兽老了">
+<meta name="twitter:description" content="抄来一段歌词：
+像所有的人一样两点一线的 奔波着挤着狭窄的公车客气的笑着如今我们这样子各奔前程的 拼搏着那段燃烧的岁月是否还记得偶尔也会看着手链上的炉石 傻笑着也会用鲜血雷鸣把自己鼓励着">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> Handlebar的基础语法 | Hexo </title>
+  <title> 魔兽老了 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +205,7 @@
             
             
               
-                Handlebar的基础语法
+                魔兽老了
               
             
           </h1>
@@ -214,8 +217,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-18T22:29:19+08:00" content="2015-12-18">
-              2015-12-18
+            <time itemprop="dateCreated" datetime="2016-03-23T12:29:19+08:00" content="2016-03-23">
+              2016-03-23
             </time>
           </span>
 
@@ -240,21 +243,13 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><em>什么是Handlebar</em><br>Handlebars.js 是对 <code>Mustache模板语言</code>的扩展，所以你可以将Mustache导入Handlebars以使用 Handlebars 强大的功能。<a id="more"></a></p>
-<h2 id="Handlebar与其它前端模板的区别"><a href="#Handlebar与其它前端模板的区别" class="headerlink" title="Handlebar与其它前端模板的区别"></a>Handlebar与其它前端模板的区别</h2><p>Handlebars可以对模板进行预编译和加载，不确定其它模板是否有同样的机制。<br>目前发现和其它模板没有太大区别，只是语法不同，但都是<strong>少逻辑</strong>和<strong>代码与视图</strong>分离的模板语言。</p>
-<h2 id="Handlebar的基础语法"><a href="#Handlebar的基础语法" class="headerlink" title="Handlebar的基础语法"></a>Handlebar的基础语法</h2><p>看个简单的代码Demo</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source = <span class="string">"&lt;p&gt;Hello, my name is &#123;&#123;name&#125;&#125;. I am from &#123;&#123;hometown&#125;&#125;. I have "</span> +</span><br><span class="line">             <span class="string">"&#123;&#123;kids.length&#125;&#125; kids:&lt;/p&gt;"</span> +</span><br><span class="line">             <span class="string">"&lt;ul&gt;&#123;&#123;#kids&#125;&#125;&lt;li&gt;&#123;&#123;name&#125;&#125; is &#123;&#123;age&#125;&#125;&lt;/li&gt;&#123;&#123;/kids&#125;&#125;&lt;/ul&gt;"</span>;</span><br><span class="line"><span class="keyword">var</span> template = Handlebars.compile(source);</span><br><span class="line"><span class="keyword">var</span> data = &#123; <span class="string">"name"</span>: <span class="string">"Alan"</span>, <span class="string">"hometown"</span>: <span class="string">"Somewhere, TX"</span>,</span><br><span class="line">             <span class="string">"kids"</span>: [&#123;<span class="string">"name"</span>: <span class="string">"Jimmy"</span>, <span class="string">"age"</span>: <span class="string">"12"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"Sally"</span>, <span class="string">"age"</span>:&#125;]&#125;;</span><br><span class="line"><span class="keyword">var</span> result = template(data);</span><br><span class="line"><span class="comment">// Would render:</span></span><br><span class="line"><span class="comment">// &lt;p&gt;Hello, my name is Alan. I am from Somewhere, TX. I have 2 kids:&lt;/p&gt;</span></span><br><span class="line"><span class="comment">// &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//   &lt;li&gt;Jimmy is 12&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//   &lt;li&gt;Sally is 4&lt;/li&gt;</span></span><br><span class="line"><span class="comment">// &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="HTML编码"><a href="#HTML编码" class="headerlink" title="HTML编码"></a>HTML编码</h3><p>在handlebars里，<code></code>会返回一个经过编码的HTML，如果你不希望被编码，可以使用”{ { {“</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"entry"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"body"</span>&gt;</span></span><br><span class="line">    &#123;&#123;&#123;body&#125;&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用这样的数据上下文：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  title: <span class="string">"All about &lt;p&gt; Tags"</span>,</span><br><span class="line">  body: <span class="string">"&lt;p&gt;This is a post about &amp;lt;p&amp;gt; tags&lt;/p&gt;"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"entry"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>All About &amp;lt;p&amp;gt; Tags<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>This is a post about &amp;lt;p&amp;gt; tags<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>handlebars不会编码<code>Handlebars.SafeString</code>。可以自定义一个helper，手动对内容进行编码，这时返回<code>new Handlebars.SafeString(result)</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Handlebars.registerHelper(<span class="string">'link'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">text, url</span>) </span>&#123;</span><br><span class="line">  text = Handlebars.Utils.escapeExpression(text);</span><br><span class="line">  url  = Handlebars.Utils.escapeExpression(url);</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">'&lt;a href="'</span> + url + <span class="string">'"&gt;'</span> + text + <span class="string">'&lt;/a&gt;'</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Handlebars.SafeString(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这里将会对传入的参数进行编码，返回值是“安全的”，所以就算你不使用”{ { {“，handlebars也不会再次编码了。</p>
-<h3 id="Handlebars中的helper"><a href="#Handlebars中的helper" class="headerlink" title="Handlebars中的helper"></a>Handlebars中的helper</h3><p>在上面提到的 HTML编码 中，我们使用了<code>Handlebars.registerHelper</code>。下面我们可以讲一讲这个<code>helper</code>了。<br>//TODO </p>
-<h3 id="块表达式"><a href="#块表达式" class="headerlink" title="块表达式"></a>块表达式</h3>
+        <p>抄来一段歌词：</p>
+<p>像所有的人一样两点一线的 奔波着<br>挤着狭窄的公车客气的笑着<br>如今我们这样子各奔前程的 拼搏着<br>那段燃烧的岁月是否还记得<br>偶尔也会看着手链上的炉石 傻笑着<br>也会用鲜血雷鸣把自己鼓励着<a id="more"></a><br>只是那装满魔兽点卡的盒子 封存着<br>提醒我不再是那个光鲜的角色</p>
+<p>多年后无意聊起<br>牧师嫁给了法师<br>战士大学毕业了<br>盗贼在纽约飘着<br>猎人饭馆很红火<br>偶尔见面喝一杯<br>还会念着我们是<br>魔兽玩家</p>
+<p>魔兽老了还是我们都已长大了<br>岁月瘦了在身上留下深深刀割<br>咽下苦涩难掩心中不变的火热<br>只有那只小牛懂得该坚持什么<br>想再一次拿起盾牌<br>冲破理想的阻碍<br>让彼此坚定的决心在血液澎湃<br>想回到那无尽的海<br>像银鸥刺透阴霾<br>让翅膀餐风饮浪撒下花开不败<br>想再淋场灰谷的雨<br>放肆任性的哭喊<br>告诉自己一切不会消失得太快<br>回不去的那个年代<br>遥祭青春如埃<br>那块红色的印记<br>一直被我收在左手口袋</p>
+<p>偶尔也会看着手链上的炉石 傻笑着<br>也会用鲜血雷鸣把自己鼓励着<br>只是那装满魔兽点卡的盒子 封存着<br>提醒我不再是那个光鲜的角色<br>多年后无意聊起<br>牧师嫁给了法师<br>战士大学毕业了<br>盗贼在纽约飘着<br>猎人饭馆很红火<br>偶尔见面喝一杯<br>还会念着我们是<br>魔兽玩家</p>
+<p>魔兽老了还是我们都已长大了<br>岁月瘦了在身上留下深深刀割<br>咽下苦涩难掩心中不变的火热<br>只有那只小牛懂得该坚持什么<br>想再一次拿起盾牌<br>冲破理想的阻碍<br>让彼此坚定的决心在血液澎湃<br>想回到那无尽的海<br>像银鸥刺透阴霾<br>让翅膀餐风饮浪撒下花开不败<br>想再淋场灰谷的雨<br>放肆任性的哭喊<br>告诉自己一切不会消失得太快<br>想在雪落比肩并排<br>告诉灰掉的战友<br>当你回看身后其实我一直都在<br>想再仰望奥格星海<br>拉近错位的站台<br>期许自己不久未来有一个等待<br>回不去的那个年代<br>遥祭青春如埃<br>那块红色的印记<br>记忆中飘飘白衣<br>一直如心跳跳动在左手口袋</p>
+
       
     </div>
 
@@ -262,7 +257,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端-模板/" rel="tag">#前端,模板</a>
+            <a href="/tags/魔兽/" rel="tag">#魔兽</a>
           
         </div>
       
@@ -271,17 +266,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/12/前端开发规范/" rel="next" title="前端开发规范">
-                <i class="fa fa-chevron-left"></i> 前端开发规范
+              <a href="/2016/01/27/git总结/" rel="next" title="git学习">
+                <i class="fa fa-chevron-left"></i> git学习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/27/git总结/" rel="prev" title="git学习">
-                git学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -405,7 +396,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handlebar与其它前端模板的区别"><span class="nav-number">2.</span> <span class="nav-text">Handlebar与其它前端模板的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handlebar的基础语法"><span class="nav-number">3.</span> <span class="nav-text">Handlebar的基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML编码"><span class="nav-number">3.1.</span> <span class="nav-text">HTML编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handlebars中的helper"><span class="nav-number">3.2.</span> <span class="nav-text">Handlebars中的helper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块表达式"><span class="nav-number">3.3.</span> <span class="nav-text">块表达式</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

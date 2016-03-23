@@ -61,9 +61,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置Nodejs and Mongodb in Windows 7">
 <meta property="og:url" content="http://yoursite.com/2015/10/29/Config-Nodejs-and-Mongodb-in-Windows-7/index.html">
-<meta property="og:site_name" content="胡逼蛋侃">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Nodejs安装">
-<meta property="og:updated_time" content="2015-12-17T08:10:05.699Z">
+<meta property="og:updated_time" content="2016-02-14T14:00:54.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置Nodejs and Mongodb in Windows 7">
 <meta name="twitter:description" content="Nodejs安装">
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> 配置Nodejs and Mongodb in Windows 7 | 胡逼蛋侃 </title>
+  <title> 配置Nodejs and Mongodb in Windows 7 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -111,7 +111,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">胡逼蛋侃</span>
+      <span class="site-title">Hexo</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -240,36 +240,36 @@
       
 
       
-        <h3 id="Nodejs_u5B89_u88C5"><a href="#Nodejs_u5B89_u88C5" class="headerlink" title="Nodejs安装"></a>Nodejs安装</h3><a id="more"></a>
-<h3 id="Mongodb_u5B89_u88C5"><a href="#Mongodb_u5B89_u88C5" class="headerlink" title="Mongodb安装"></a>Mongodb安装</h3><h3 id="u5B89_u88C5Nodejs_u7684mongodb_u8FDE_u63A5_u9A71_u52A8"><a href="#u5B89_u88C5Nodejs_u7684mongodb_u8FDE_u63A5_u9A71_u52A8" class="headerlink" title="安装Nodejs的mongodb连接驱动"></a>安装Nodejs的mongodb连接驱动</h3><h3 id="u8FDE_u63A5mongodb"><a href="#u8FDE_u63A5mongodb" class="headerlink" title="连接mongodb"></a>连接mongodb</h3><h3 id="MongoDB_u7B80_u6613_u64CD_u4F5C"><a href="#MongoDB_u7B80_u6613_u64CD_u4F5C" class="headerlink" title="MongoDB简易操作"></a>MongoDB简易操作</h3><p>在mongodb服务启动以后，新开一个命令窗口，输入<code>mongo</code>（这条命令在mongodb的bin目录下，如果没有配置环境变量，请注意输入mongo的当前路径）<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MongoDB shell version: <span class="number">3</span>.<span class="number">0</span>.<span class="number">7</span></span><br><span class="line">connecting to: test</span><br><span class="line">Welcome to the MongoDB shell.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="Nodejs安装"><a href="#Nodejs安装" class="headerlink" title="Nodejs安装"></a>Nodejs安装</h3><a id="more"></a>
+<h3 id="Mongodb安装"><a href="#Mongodb安装" class="headerlink" title="Mongodb安装"></a>Mongodb安装</h3><h3 id="安装Nodejs的mongodb连接驱动"><a href="#安装Nodejs的mongodb连接驱动" class="headerlink" title="安装Nodejs的mongodb连接驱动"></a>安装Nodejs的mongodb连接驱动</h3><h3 id="连接mongodb"><a href="#连接mongodb" class="headerlink" title="连接mongodb"></a>连接mongodb</h3><h3 id="MongoDB简易操作"><a href="#MongoDB简易操作" class="headerlink" title="MongoDB简易操作"></a>MongoDB简易操作</h3><p>在mongodb服务启动以后，新开一个命令窗口，输入<code>mongo</code>（这条命令在mongodb的bin目录下，如果没有配置环境变量，请注意输入mongo的当前路径）<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MongoDB shell version: <span class="number">3</span>.<span class="number">0</span>.<span class="number">7</span></span><br><span class="line">connecting to: test</span><br><span class="line">Welcome to the MongoDB shell.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 <p>OK，连接成功。</p>
-<h2 id="u5E93_u64CD_u4F5C"><a href="#u5E93_u64CD_u4F5C" class="headerlink" title="库操作"></a>库操作</h2><ul>
+<h2 id="库操作"><a href="#库操作" class="headerlink" title="库操作"></a>库操作</h2><ul>
 <li><code>show dbs</code>  显示数据库列表</li>
 <li><code>use &lt;dbname&gt;</code> 进入名称为<dbname>的数据库，大小写敏感；如果<dbname>不存在，mongodb会自动创建</dbname></dbname></li>
 <li><code>db</code>  用于查看当前所在的数据库</li>
 </ul>
-<h2 id="u96C6_u5408_u64CD_u4F5C"><a href="#u96C6_u5408_u64CD_u4F5C" class="headerlink" title="集合操作"></a>集合操作</h2><ul>
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><ul>
 <li><code>db.&lt;dbname&gt;.user.save({})</code><br>新建名称为<code>user</code>的集合</li>
 <li><code>show collections</code><br>显示数据库中的集合(集合的概念类似于表)</li>
 <li><code>db.user.count()</code><br>查看集合<code>user</code>的记录总数</li>
 <li><code>db.user.insert({&quot;key1&quot;:2, name:&quot;zuo&quot;, age:356})</code><br>在集合<code>user</code>中插入数据<br><code>{&quot;key1&quot;:2, name:&quot;zuo&quot;, age:356}</code></li>
 </ul>
-<h2 id="u67E5_u8BE2_u6570_u636E"><a href="#u67E5_u8BE2_u6570_u636E" class="headerlink" title="查询数据"></a>查询数据</h2><p><code>find</code>和<code>findOne</code>命令，即用于查询<br><code>db.user.find()</code><br>MongoDB的查询条件中，并没有 &gt;, &lt;, &gt;= , &lt;= 这些运算符，而是使用 “$lt”, “$lte”, “$gt”, “$gte”<br>另外，<strong>每个文档有一个名为 “_id” 的成员</strong>(文档的概念类似于记录)，其实，MongoDB会为每个文档都创建这样一个文档成员，我们指定的 “key”, “id” 对于MongoDB来说：它们并不是<strong>文档的主键</strong>，MongoDB只认 “_id”，你可以指定，但如果不指定，MongoDB就自动添加。 </p>
-<h2 id="u4FEE_u6539_u6570_u636E"><a href="#u4FEE_u6539_u6570_u636E" class="headerlink" title="修改数据"></a>修改数据</h2><ul>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p><code>find</code>和<code>findOne</code>命令，即用于查询<br><code>db.user.find()</code><br>MongoDB的查询条件中，并没有 &gt;, &lt;, &gt;= , &lt;= 这些运算符，而是使用 “$lt”, “$lte”, “$gt”, “$gte”<br>另外，<strong>每个文档有一个名为 “_id” 的成员</strong>(文档的概念类似于记录)，其实，MongoDB会为每个文档都创建这样一个文档成员，我们指定的 “key”, “id” 对于MongoDB来说：它们并不是<strong>文档的主键</strong>，MongoDB只认 “_id”，你可以指定，但如果不指定，MongoDB就自动添加。 </p>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><ul>
 <li><code>var t2=db.user.findOne({&quot;key1&quot;:2})</code><br>//获取待修改的文档</li>
 <li><code>t.name=&quot;wang&quot;</code> ， 赋新值</li>
 <li><code>db.user.update({&quot;key1&quot;:2} , t2)</code> ，更新文档</li>
 </ul>
-<h2 id="u5220_u9664_u6570_u636E"><a href="#u5220_u9664_u6570_u636E" class="headerlink" title="删除数据"></a>删除数据</h2><ul>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><ul>
 <li><code>db.user.remove({&quot;key1&quot;:2})</code></li>
 </ul>
-<h2 id="u5220_u9664_u96C6_u5408"><a href="#u5220_u9664_u96C6_u5408" class="headerlink" title="删除集合"></a>删除集合</h2><ul>
+<h2 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h2><ul>
 <li><code>db.user.drop()</code>或<code>db.runCommand({&quot;drop&quot;, &quot;user&quot;})</code></li>
 </ul>
-<h2 id="u5220_u9664_u6570_u636E_u5E93"><a href="#u5220_u9664_u6570_u636E_u5E93" class="headerlink" title="删除数据库"></a>删除数据库</h2><ul>
+<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><ul>
 <li><code>db.runCommand({&quot;dropDatabase&quot;:1})</code>，用于删除当前数据库</li>
 </ul>
-<h2 id="u83B7_u53D6_u670D_u52A1_u7AEF_u72B6_u6001_u4FE1_u606F"><a href="#u83B7_u53D6_u670D_u52A1_u7AEF_u72B6_u6001_u4FE1_u606F" class="headerlink" title="获取服务端状态信息"></a>获取服务端状态信息</h2><ul>
+<h2 id="获取服务端状态信息"><a href="#获取服务端状态信息" class="headerlink" title="获取服务端状态信息"></a>获取服务端状态信息</h2><ul>
 <li><code>db.runCommand({&quot;serverStatus&quot;: 1})</code></li>
 </ul>
 
@@ -359,15 +359,15 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://7xlxb6.com1.z0.glb.clouddn.com/hubidankanaaa%E6%A0%87%E9%A2%98.png"
-               alt="Hubidankan" />
-          <p class="site-author-name" itemprop="name">Hubidankan</p>
-          <p class="site-description motion-element" itemprop="description">Just for funs!!</p>
+               src="http://7xlxb6.com1.z0.glb.clouddn.com/avatar.jpg"
+               alt="hubidankan" />
+          <p class="site-author-name" itemprop="name">hubidankan</p>
+          <p class="site-description motion-element" itemprop="description">Just for fun!!!</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -381,7 +381,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
@@ -391,6 +391,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2171382337/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Weibo
+                  
+                </a>
+              </span>
+            
           
         </div>
 
@@ -413,7 +423,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nodejs_u5B89_u88C5"><span class="nav-number">1.</span> <span class="nav-text">Nodejs安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongodb_u5B89_u88C5"><span class="nav-number">2.</span> <span class="nav-text">Mongodb安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5Nodejs_u7684mongodb_u8FDE_u63A5_u9A71_u52A8"><span class="nav-number">3.</span> <span class="nav-text">安装Nodejs的mongodb连接驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDE_u63A5mongodb"><span class="nav-number">4.</span> <span class="nav-text">连接mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB_u7B80_u6613_u64CD_u4F5C"><span class="nav-number">5.</span> <span class="nav-text">MongoDB简易操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5E93_u64CD_u4F5C"><span class="nav-number"></span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u96C6_u5408_u64CD_u4F5C"><span class="nav-number"></span> <span class="nav-text">集合操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u67E5_u8BE2_u6570_u636E"><span class="nav-number"></span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4FEE_u6539_u6570_u636E"><span class="nav-number"></span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5220_u9664_u6570_u636E"><span class="nav-number"></span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5220_u9664_u96C6_u5408"><span class="nav-number"></span> <span class="nav-text">删除集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5220_u9664_u6570_u636E_u5E93"><span class="nav-number"></span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u83B7_u53D6_u670D_u52A1_u7AEF_u72B6_u6001_u4FE1_u606F"><span class="nav-number"></span> <span class="nav-text">获取服务端状态信息</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nodejs安装"><span class="nav-number">1.</span> <span class="nav-text">Nodejs安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongodb安装"><span class="nav-number">2.</span> <span class="nav-text">Mongodb安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Nodejs的mongodb连接驱动"><span class="nav-number">3.</span> <span class="nav-text">安装Nodejs的mongodb连接驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接mongodb"><span class="nav-number">4.</span> <span class="nav-text">连接mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB简易操作"><span class="nav-number">5.</span> <span class="nav-text">MongoDB简易操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库操作"><span class="nav-number"></span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合操作"><span class="nav-number"></span> <span class="nav-text">集合操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询数据"><span class="nav-number"></span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据"><span class="nav-number"></span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据"><span class="nav-number"></span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除集合"><span class="nav-number"></span> <span class="nav-text">删除集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除数据库"><span class="nav-number"></span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取服务端状态信息"><span class="nav-number"></span> <span class="nav-text">获取服务端状态信息</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -439,7 +449,7 @@
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Hubidankan</span>
+  <span class="author" itemprop="copyrightHolder">hubidankan</span>
 </div>
 
 <div class="powered-by">
