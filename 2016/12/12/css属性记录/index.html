@@ -61,13 +61,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS 属性整理记录">
 <meta property="og:url" content="http://yoursite.com/2016/12/12/css属性记录/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="胡逼蛋侃">
 <meta property="og:description" content="1.  box-sizing说到 IE 的 bug，在 IE6以前的版本中，IE对盒模型的解析出现一些问题，跟其它浏览器不同，将 border 与 padding 都包含在 width 之内。而另外一些浏览器则与它相反，是不包括border和padding的。在我们开发的过程中会发现，有时候，如果对页面中的大区域进行设置时，将border、padding计算到width和height之内，反而更灵">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161221215216.png">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328394007.png">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328595136.png">
 <meta property="og:image" content="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328612866.png">
-<meta property="og:updated_time" content="2016-12-21T14:12:31.024Z">
+<meta property="og:updated_time" content="2016-12-21T14:13:33.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 属性整理记录">
 <meta name="twitter:description" content="1.  box-sizing说到 IE 的 bug，在 IE6以前的版本中，IE对盒模型的解析出现一些问题，跟其它浏览器不同，将 border 与 padding 都包含在 width 之内。而另外一些浏览器则与它相反，是不包括border和padding的。在我们开发的过程中会发现，有时候，如果对页面中的大区域进行设置时，将border、padding计算到width和height之内，反而更灵">
@@ -88,7 +88,7 @@
   };
 </script>
 
-  <title> CSS 属性整理记录 | Hexo </title>
+  <title> CSS 属性整理记录 | 胡逼蛋侃 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -115,7 +115,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">胡逼蛋侃</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -249,12 +249,12 @@
 <li><strong>box-sizing:content-box</strong><br>当我们设置 box-sizing: content-box; 时，浏览器对盒模型的解释遵从我们之前认识到的 W3C 标准，当它定义width和height时，它的宽度不包括border和padding。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"> </span><br><span class="line"> <span class="class">.content-box</span><span class="rules">&#123;</span><br><span class="line"> <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> content-box</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">120px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">20px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">background</span>:<span class="value"> burlywood</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content-box"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://7xlxb6.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161221215216.png" alt="Alt text">      <img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328394007.png" alt="Alt text"></p>
+<p><img src="http://7xlxb6.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161221215216.png" alt="Alt text"><img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328394007.png" alt="Alt text"></p>
 <ul>
 <li><strong>box-sizing:border-box</strong><br>当我们设置box-sizing: border-box; 时，浏览器对盒模型的解释与 IE6之前的版本相同，当它定义width和height时，border和padding则是被包含在宽高之内的。内容的宽和高可以通过定义的“width”和 “height”减去相应方向的“padding”和“border”的宽度得到。内容的宽和高必须保证不能为负，必要时将自动增大该元素border box的尺寸以使其内容的宽或高最小为0。</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"> </span><br><span class="line"> <span class="class">.border-box</span><span class="rules">&#123;</span><br><span class="line"> <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">120px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">20px</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">background</span>:<span class="value"> burlywood</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"border-box"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328595136.png" alt="Alt text"> <img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328612866.png" alt="Alt text"></p>
+<p><img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328595136.png" alt="Alt text"><img src="http://7xlxb6.com1.z0.glb.clouddn.com/.1482328612866.png" alt="Alt text"></p>
 <hr>
 
       
